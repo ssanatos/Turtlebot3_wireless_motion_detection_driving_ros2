@@ -6,6 +6,8 @@
 # 개발환경1(라즈베리파이)     
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
 Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera ,   
+![라파 프로젝트 서현호 개발사양서 (14) (1)](https://user-images.githubusercontent.com/79293543/153694164-926ad39e-fd31-4f1b-b37b-944eca7fc874.jpg)  
+
 
 # 개발환경2(젯슨 나노) -- 추천하지 않음
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
@@ -46,7 +48,7 @@ learning.py라는 파이썬 파일을 열고,
 
 # 학습된 모델을 사용하여 손 동작을 기계적인 명령으로 변환하고, ROS로 터틀봇에 그 명령을 전달하기.  
 학습된 모델을 불러와서 손 동작을 분류하는 함수를 만들고,  
-그 분류된 값에 따라 서로 다른 제어 명령을 터틀봇으로 퍼블리싱하는 코드
+그 분류된 값에 따라 서로 다른 제어 명령을 터틀봇으로 퍼블리싱하는 코드가 구현되어 있다.  
 
 # 터틀봇의 Camera 정보 PC에서 받아보기.  
 터틀봇에서 CompressedImage로 보내준 데이터를 PC 모니터에 출력하기.  
