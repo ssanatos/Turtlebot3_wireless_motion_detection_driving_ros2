@@ -2,9 +2,13 @@
 
 # 시연 모습   
 
-# 개발환경   
+# 개발환경1(라즈베리파이)     
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
-Turtlebot : turtlebot3 , foxy , raspberry pi camera ,   
+Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera ,   
+
+# 개발환경2(젯슨 나노) --  
+PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
+Turtlebot : Turtlebot3 , opencr , Jetson nano , Xubuntu(ros2 설치버전)
 
 # 선행작업  
 1. 터틀봇 3 메뉴얼 따라서 조립  
@@ -47,9 +51,9 @@ learning.py라는 파이썬 파일을 열고,
 ctrl alt T를 통하여 터미널 창을 4개 띄운다. (터미네이터를 사용하면 편리하다)   
 2개는 turtlebot 용이고, 2개는 pc용이다.  
 2개의 터미널에서  
-'''
+```
 ssh turtlebotID@turtlebotIP주소
-'''  
+```  
 를 입력하여 ssh접속을 시도한다.  
 비밀번호도 입력하여 준다.  
 그 중 1개의 터미널은 bringup을 하여 터틀봇이 모터 제어 토픽을 받을 수 있도록 만들 것이다.  
