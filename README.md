@@ -63,14 +63,10 @@ learning.py라는 파이썬 파일을 열고,
 수집한 손 동작 데이터를 불러온다.  
 학습은 빠르고 성능이 좋은 XGBOOST를 사용한다.  
 이 경우에 학습은 손 모양을 분류하는 것이므로,  
-```
-from xgboost import XGBClassifier  
-```  
+```from xgboost import XGBClassifier```  
 를 사용한다.  
 xgboost를 처음 사용한다면 ctrl alt T로 터미널창을 열어 라이브러리를 설치한다.  
-```
-pip install xgboost  
-```
+```pip install xgboost```
 Accuracy 값을 확인하면서 파라미터값을 조정해본다.  
 (필자가 제공하는 모델은 Accuracy가 97%이다.)  
 만족스러운 정확도가 나오면 모델을 저장한다.  
@@ -93,10 +89,13 @@ ctrl alt T를 통하여 터미널 창을 4개 띄운다. (터미네이터를 사
 2개는 turtlebot 용이고, 2개는 pc용이다.  
 2개의 터미널에서  
 ```
-ssh turtlebotID@turtlebotIP주소
+ssh [turtlebotID]@[turtlebotIP주소]
 ```  
 를 입력하여 ssh접속을 시도한다.  
 비밀번호도 입력하여 준다.  
+(터틀봇3의 기본설정 ID는 ubuntu 이며, PW는 turtlebot 이다.)  
+(turtlebot의 IP확인은 터틀봇에 모니터를 연결하여 ifconfig로 확인하거나,  
+http://192.168.0.1/로 들어가서 IP의 연결/끊김의 변화를 테스트해봐야한다.)  
 그 중 1개의 터미널은 bringup을 하여 터틀봇이 모터 제어 토픽을 받을 수 있도록 만들 것이다.  
 나머지 1개의 터미널은 터틀봇의 카메라를 퍼블리싱할 것이다.  
 PC용 터미널 중 1개의 터미널에서는 손 동작을 인식받아서 모터 제어 토픽을 퍼블리싱할 것이다.   
