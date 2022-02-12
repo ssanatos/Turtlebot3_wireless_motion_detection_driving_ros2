@@ -45,6 +45,7 @@ ctrl x  ->  y  ->  enter
 필자는 13만개의 손모양 데이터를 수집하여 XGBOOST를 이용하여 학습시켰다.   
 여기서 제공되는 모델을 갖다 쓴다면 굳이 손 동작은 학습시킬 필요가 없다.  
 하지만, 손 동작을 새롭게 학습시키고 싶다면 다음과 같은 과정을 거친다.  
+![라파 프로젝트 서현호 개발사양서 (9)](https://user-images.githubusercontent.com/79293543/153701674-c64d8abe-e9e8-42d3-a489-677b40da7f2c.jpg)  
 1. 손 동작 데이터 수집하기.  
 PC에 웹캠을 연결하고 learning.zip을 다운받는다.  
 learning.zip이라는 압축파일을 풀고 gather.py라는 파일을 pc에서 실행한다.  
