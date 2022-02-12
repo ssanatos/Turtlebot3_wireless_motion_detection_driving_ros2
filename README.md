@@ -1,4 +1,4 @@
-# turtlebot3_motion_driving
+# TURTLEBOT3_wireless_motion_detection_driving_ROS2  
 
 # 시연 모습   
 ![KakaoTalk_20220212_111535165](https://user-images.githubusercontent.com/79293543/153692619-bda131b6-4eed-4d21-8d10-427d254ff046.gif)  
@@ -13,7 +13,9 @@ Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera 
 
 # 개발환경2(젯슨 나노) -- 추천하지 않음
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
-Turtlebot : Turtlebot3 , opencr , Jetson nano , Xubuntu(ros2 설치버전)
+Turtlebot : Turtlebot3 , opencr , Jetson nano , Xubuntu(ros2 설치버전)  
+https://www.dropbox.com/s/tjg4irahues8esz/jetson_ros2_211015.zip?dl=0  
+(ID : r1mini , PW : 1 )  
 
 # 선행작업  
 1. 터틀봇 3 메뉴얼 따라서 조립  
