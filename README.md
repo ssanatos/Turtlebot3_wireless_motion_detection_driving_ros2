@@ -16,7 +16,11 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 # PC에 이 프로젝트를 구현할 ROS 패키지를 생성한다.  
 패키지를 생성하고 setup.py를 덮어쓰고,  
 나머지 파일을 src 폴더에 다운로드 후  
-작업 디렉토리를 해당 워크스페이스로 이동하여 colcon build 한다.  
+작업 디렉토리를 해당 워크스페이스로 이동하여 
+```
+colcon build
+```
+한다.  
 동일한 네트워크 안에서 여러 터틀봇을 사용할 경우 노드명을 구별되게 바꿔주도록 한다.  
 
 # 손 동작 학습시키기  
@@ -27,7 +31,7 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 PC에 웹캠을 연결하고 learning.zip을 다운받는다.  
 learning.zip이라는 압축파일을 풀고 gather.py라는 파일을 pc에서 실행한다.  
 ctrl alt T 를 통해 터미널 창을 열고, 아래의 코드를 복사 붙여넣기 하여 필요한 라이브러리를 설치한다.  
-pip install mediapipe  
+```pip install mediapipe```  
 라벨링 할 태그를 설정하고 해당하는 손 모양을 만든 후,  
 손을 카메라위치에 두고 F5를 눌러 파이썬 파일을 실행하여 손 모양 데이터를 모은다.  
 다양한 위치와 각도로 손 모양 데이터를 수집한다.  
@@ -42,7 +46,11 @@ learning.py라는 파이썬 파일을 열고,
 # 실행 
 ctrl alt T를 통하여 터미널 창을 4개 띄운다. (터미네이터를 사용하면 편리하다)   
 2개는 turtlebot 용이고, 2개는 pc용이다.  
-2개의 터미널에서 ssh turtlebotID@turtlebotIP주소를 입력하여 ssh접속을 시도한다.  
+2개의 터미널에서  
+'''
+ssh turtlebotID@turtlebotIP주소
+'''  
+를 입력하여 ssh접속을 시도한다.  
 비밀번호도 입력하여 준다.  
 그 중 1개의 터미널은 bringup을 하여 터틀봇이 모터 제어 토픽을 받을 수 있도록 만들 것이다.  
 나머지 1개의 터미널은 터틀봇의 카메라를 퍼블리싱할 것이다.  
