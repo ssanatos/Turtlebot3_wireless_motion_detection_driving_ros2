@@ -6,7 +6,7 @@
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
 Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera ,   
 
-# 개발환경2(젯슨 나노) --  
+# 개발환경2(젯슨 나노) -- 추천하지 않음
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
 Turtlebot : Turtlebot3 , opencr , Jetson nano , Xubuntu(ros2 설치버전)
 
@@ -45,7 +45,14 @@ learning.py라는 파이썬 파일을 열고,
 
 # 학습된 모델을 사용하여 손 동작을 기계적인 명령으로 변환하고, ROS로 터틀봇에 그 명령을 전달하기.  
 
+
 # 터틀봇의 Camera 정보 PC에서 받아보기.  
+터틀봇에서 CompressedImage로 보내준 데이터를 PC 모니터에 출력하기.  
+실시간 전송을 위하여 압축률이 높은 CompressedImage를 활용한다.  
+터틀봇에 ssh로 접근하여 카메라 Publisher 노드를 실행하고,  
+PC에서 카메라 Subscribe 노드를 실행하여 터틀봇 화면을 PC에 띄운다.  
+CV_bridge를 이용하여 동일한 이미지에 대하여 로스와 opencv를 모두 활용할 수 있게 한다.  
+퍼블리싱, 섭스크라이브 노드의 실행은 아래와 같이 한다.  
 
 # 실행 
 ctrl alt T를 통하여 터미널 창을 4개 띄운다. (터미네이터를 사용하면 편리하다)   
