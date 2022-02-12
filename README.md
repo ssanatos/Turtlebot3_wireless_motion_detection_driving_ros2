@@ -1,7 +1,9 @@
 # turtlebot3_motion_driving
 
 # 시연 모습   
-![KakaoTalk_20220212_111535165](https://user-images.githubusercontent.com/79293543/153692619-bda131b6-4eed-4d21-8d10-427d254ff046.gif)
+![KakaoTalk_20220212_111535165](https://user-images.githubusercontent.com/79293543/153692619-bda131b6-4eed-4d21-8d10-427d254ff046.gif)  
+![20220212_154718](https://user-images.githubusercontent.com/79293543/153700611-365d3dec-7e07-40c6-b423-d9367b67aeaf.gif)  
+
 
 # 개발환경1(라즈베리파이)     
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
