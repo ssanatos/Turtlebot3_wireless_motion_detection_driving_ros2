@@ -89,7 +89,7 @@ CV_bridge를 이용하여 동일한 이미지에 대하여 로스와 opencv를 �
 # 실행 
 ctrl alt T를 통하여 터미널 창을 4개 띄운다. (터미네이터를 사용하면 편리하다)   
 2개는 turtlebot 용이고, 2개는 pc용이다.  
-![Screenshot from 2022-02-12 17-07-33](https://user-images.githubusercontent.com/79293543/153703075-776c0d41-011d-46b3-9563-51b3e35b84c8.png)  
+![Screenshot from 2022-02-12 17-07-33](https://user-images.githubusercontent.com/79293543/153703383-1d100f2a-be4c-4671-bdee-90342b5a74cb.jpg) 
 2개의 터미널에서  
 ```
 ssh [turtlebotID]@[turtlebotIP주소]
