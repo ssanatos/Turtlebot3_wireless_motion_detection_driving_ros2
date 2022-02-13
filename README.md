@@ -1,4 +1,4 @@
-# TURTLEBOT3_wireless_motion_detection_driving_ROS2  
+### TURTLEBOT3_wireless_motion_detection_driving_ROS2  
 
 # 시연 모습   
 ![KakaoTalk_20220212_111535165](https://user-images.githubusercontent.com/79293543/153692619-bda131b6-4eed-4d21-8d10-427d254ff046.gif)  
@@ -63,6 +63,7 @@ ctrl alt T 를 통해 터미널 창을 열고, 아래의 코드를 복사 붙여
 2. 손 동작 학습시키기.  
 learning.py라는 파이썬 파일을 열고,  
 수집한 손 동작 데이터를 불러온다.  
+![스크린샷, 2022-02-13 19-15-22](https://user-images.githubusercontent.com/79293543/153749294-d66930ae-78ab-4f34-9c3b-acdf942acad4.png)  
 학습은 빠르고 성능이 좋은 XGBOOST를 사용한다.  
 이 경우에 학습은 손 모양을 분류하는 것이므로,  
 ```from xgboost import XGBClassifier```  
