@@ -9,8 +9,7 @@
 ![20220212_154718](https://user-images.githubusercontent.com/79293543/153700611-365d3dec-7e07-40c6-b423-d9367b67aeaf.gif)  
 
 <br/>   
-<br/>   
-<br/>     
+
 
 # 개발환경1(라즈베리파이)     
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
@@ -18,8 +17,7 @@ Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera 
 ![라파 프로젝트 서현호 개발사양서 (14) (1)](https://user-images.githubusercontent.com/79293543/153694164-926ad39e-fd31-4f1b-b37b-944eca7fc874.jpg)  
 
 <br/>   
-<br/>   
-<br/>     
+
   
   
 
@@ -29,8 +27,7 @@ Turtlebot : Turtlebot3 , opencr , Jetson nano , Xubuntu(ros2 설치버전)
 https://www.dropbox.com/s/tjg4irahues8esz/jetson_ros2_211015.zip?dl=0  
 (ID : r1mini , PW : 1 )  
 <br/>   
-<br/>   
-<br/>     
+
   
   
 # 선행작업  
@@ -40,8 +37,7 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 절차대로 진행하던 중 어떤 과정에서 에러가 발생하면 처음부터 다시 하거나,  
 그에 맞게 필요한 것들을 설치하거나, 수정하여 에러없이 진행을 완료시켜야 한다.  
 <br/>   
-<br/>   
-<br/>     
+
   
   
 # PC에 이 프로젝트를 구현할 ROS 패키지를 생성한다.  
@@ -63,8 +59,7 @@ alias wksetup='source /opt/ros/foxy/setup.bash && source ~/[해당 워크스페�
 ```  
 ctrl x  ->  y  ->  enter  
 <br/>   
-<br/>   
-<br/>     
+ 
    
   
 # 손 동작 학습시키기  
@@ -98,8 +93,7 @@ Accuracy 값을 확인하면서 파라미터값을 조정해본다.
 (필자가 제공하는 모델은 Accuracy가 97%이다.)  
 만족스러운 정확도가 나오면 모델을 저장한다.  
 <br/>   
-<br/>   
-<br/>     
+
   
   
 
@@ -107,8 +101,7 @@ Accuracy 값을 확인하면서 파라미터값을 조정해본다.
 학습된 모델을 불러와서 손 동작을 분류하는 함수를 만들고,  
 그 분류된 값에 따라 서로 다른 제어 명령을 터틀봇으로 퍼블리싱하는 코드가 구현되어 있다.  
 <br/>   
-<br/>   
-<br/>     
+   
   
   
 # 터틀봇의 Camera 정보 PC에서 받아보기.  
@@ -119,8 +112,7 @@ PC에서 카메라 Subscribe 노드를 실행하여 터틀봇 화면을 PC에 �
 CV_bridge를 이용하여 동일한 이미지에 대하여 로스와 opencv를 모두 활용할 수 있게 한다.  
 퍼블리싱, 섭스크라이브 노드의 실행은 아래와 같이 한다.  
 <br/>   
-<br/>   
-<br/>     
+    
   
   
 # 실행 
@@ -141,8 +133,7 @@ http://192.168.0.1/ 로 들어가서 IP의 연결/끊김의 변화를 테스트�
 PC용 터미널 중 1개의 터미널에서는 손 동작을 인식받아서 모터 제어 토픽을 퍼블리싱할 것이다.   
 PC용 나머지 터미널에서는 터틀봇이 보낸 카메라 이미지를 받아와서 화면에 출력하고 저장할 것이다.  
 <br/>   
-<br/>   
-<br/>     
+   
   
   
 # 중간지점 및 Final지점 인식
@@ -152,8 +143,7 @@ PC용 나머지 터미널에서는 터틀봇이 보낸 카메라 이미지를 �
 그 때의 주행 시간을 기억한다. 마지막 도착지점에서의 주행 시간은 총 주행시간이 된다.  
 주행기록을 DB에 모아서 랭킹을 만들고 웹에서 보여줄 수 있다.  
 <br/>   
-<br/>   
-<br/>     
+ 
   
   
 # 인간 주행데이터로부터 자율주행 학습하기 
