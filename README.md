@@ -3,7 +3,7 @@
 <br/>   
 <br/>   
 
-# 시연 모습    
+## 시연 모습    
 ![KakaoTalk_20220212_111535165](https://user-images.githubusercontent.com/79293543/153692619-bda131b6-4eed-4d21-8d10-427d254ff046.gif)  
     
 ![20220212_154718](https://user-images.githubusercontent.com/79293543/153700611-365d3dec-7e07-40c6-b423-d9367b67aeaf.gif)  
@@ -11,7 +11,7 @@
 <br/>   
 
 
-# 개발환경1(라즈베리파이)     
+## 개발환경1(라즈베리파이)     
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
 Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera ,   
 ![라파 프로젝트 서현호 개발사양서 (14) (1)](https://user-images.githubusercontent.com/79293543/153694164-926ad39e-fd31-4f1b-b37b-944eca7fc874.jpg)  
@@ -21,7 +21,7 @@ Turtlebot : Turtlebot3 , Opencr , Raspberry pi , Ros foxy , raspberry pi camera 
   
   
 
-# 개발환경2(젯슨 나노) -- 추천하지 않음
+## 개발환경2(젯슨 나노) -- 추천하지 않음
 PC : 우분투 20.04 , Python3.8 , VScode , ros2 foxy  
 Turtlebot : Turtlebot3 , opencr , Jetson nano , Xubuntu(ros2 설치버전)  
 https://www.dropbox.com/s/tjg4irahues8esz/jetson_ros2_211015.zip?dl=0  
@@ -30,7 +30,7 @@ https://www.dropbox.com/s/tjg4irahues8esz/jetson_ros2_211015.zip?dl=0
 
   
   
-# 선행작업  
+## 선행작업  
 1. 터틀봇 3 메뉴얼 따라서 조립  
 2. 터틀봇 사이트에서 3번 Quick start guide를 따라 ros버전을 foxy로 선택하고 절차대로 진행하여 bringup까지 마친다.  
 https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/  
@@ -40,7 +40,7 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 
   
   
-# PC에 이 프로젝트를 구현할 ROS 패키지를 생성한다.  
+## PC에 이 프로젝트를 구현할 ROS 패키지를 생성한다.  
 ```
 ros2 pkg create --build-type ament_python [패키지명]
 ```
@@ -62,7 +62,7 @@ ctrl x  ->  y  ->  enter
  
    
   
-# 손 동작 학습시키기  
+## 손 동작 학습시키기  
 필자는 13만개의 손모양 데이터를 수집하여 XGBOOST를 이용하여 학습시켰다.   
 여기서 제공되는 모델을 갖다 쓴다면 굳이 손 동작은 학습시킬 필요가 없다.  
 하지만, 손 동작을 새롭게 학습시키고 싶다면 다음과 같은 과정을 거친다.  
@@ -97,14 +97,14 @@ Accuracy 값을 확인하면서 파라미터값을 조정해본다.
   
   
 
-# 학습된 모델을 사용하여 손 동작을 기계적인 명령으로 변환하고, ROS로 터틀봇에 그 명령을 전달하기.  
+## 학습된 모델을 사용하여 손 동작을 기계적인 명령으로 변환하고, ROS로 터틀봇에 그 명령을 전달하기.  
 학습된 모델을 불러와서 손 동작을 분류하는 함수를 만들고,  
 그 분류된 값에 따라 서로 다른 제어 명령을 터틀봇으로 퍼블리싱하는 코드가 구현되어 있다.  
 <br/>   
    
   
   
-# 터틀봇의 Camera 정보 PC에서 받아보기.  
+## 터틀봇의 Camera 정보 PC에서 받아보기.  
 터틀봇에서 CompressedImage로 보내준 데이터를 PC 모니터에 출력하기.  
 실시간 전송을 위하여 압축률이 높은 CompressedImage를 활용한다.  
 터틀봇에 ssh로 접근하여 카메라 Publisher 노드를 실행하고,  
@@ -115,7 +115,7 @@ CV_bridge를 이용하여 동일한 이미지에 대하여 로스와 opencv를 �
     
   
   
-# 실행 
+## 실행 
 ctrl alt T를 통하여 터미널 창을 4개 띄운다. (터미네이터를 사용하면 편리하다)   
 2개는 turtlebot 용이고, 2개는 pc용이다.  
 ![Screenshot from 2022-02-12 17-07-33](https://user-images.githubusercontent.com/79293543/153703383-1d100f2a-be4c-4671-bdee-90342b5a74cb.jpg) 
@@ -136,7 +136,7 @@ PC용 나머지 터미널에서는 터틀봇이 보낸 카메라 이미지를 �
    
   
   
-# 중간지점 및 Final지점 인식
+## 중간지점 및 Final지점 인식
 코스를 만들고 체크포인트를 지정하면 여러 사람이 즐길 수 있는 주행게임을 만들 수 있다.  
 중간지점과 도착지점을 인식도 카메라를 사용한다.  
 터틀봇이 읽어들인 카메라 이미지에서 OCR로 읽어들인 글자가 미리 "중간지점" 이면,  
@@ -146,8 +146,9 @@ PC용 나머지 터미널에서는 터틀봇이 보낸 카메라 이미지를 �
  
   
   
-# 인간 주행데이터로부터 자율주행 학습하기 
+## 인간 주행데이터로부터 자율주행 학습하기 
 인간의 주행데이터를 다량으로 모으면 자율주행을 어느정도 학습시킬 수 있다.  
+![Screenshot from 2022-02-14 10-49-02](https://user-images.githubusercontent.com/79293543/153787994-02fae01d-7a88-4dca-a4df-fb5eec67d2d1.png)  
 성능 좋은 자율주행을 구현하고자 한다면 양질의 데이터와 훌륭한 알고리즘과 즉각적으로 처리할 수 있는 컴퓨팅 파워가 필요하다.  
 또한 다양성을 줄일 수록 좋은 성능을 얻을 수 있다.  
 피사체의 다양성 , 경로의 다양성을 줄이기 위해  
