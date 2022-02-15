@@ -6,7 +6,8 @@ import cv2 as cv
 from cv_bridge import CvBridge
 import time
 import pytesseract
-import re
+
+
 
 class ImgSubscriber(Node):
 
@@ -24,6 +25,10 @@ class ImgSubscriber(Node):
         self.quarter3 = None
         self.finish = None
         self.lap_record = None
+        self.first_img = cv.imread('./first.png')
+        self.second_img = cv.imread('./second.png')
+        self.third_img = cv.imread('./third.png')
+        self.finish_img = cv.imread('./finish.png')
 
 
     def listener_callback(self, msg):
@@ -34,15 +39,15 @@ class ImgSubscriber(Node):
         cv.imwrite(f'./bot_camera_gather/rapa{str(now)}.jpg', get_image)
         get_text = pytesseract.image_to_string(get_image)
 
-        if 'START' in get_text:
+        if self.start == None and 'START' in get_text:
             self.start = now
-        elif 'FIRST' in get_text:
+        elif self.quarter1 == None and 'FIRST' in get_text:
             self.quarter1 = now
-        elif 'SECOND' in get_text:
+        elif self.quarter2 == None and 'SECOND' in get_text:
             self.quarter2 = now
-        elif 'THIRD' in get_text:
+        elif self.quarter3 == None and 'THIRD' in get_text:
             self.quarter3 = now 
-        elif 'FINISH' in get_text:
+        elif self.finish == None and 'FINISH' in get_text:
             self.finish = now   
 
         
@@ -50,15 +55,18 @@ class ImgSubscriber(Node):
             get_image.release()
 
         if self.start and self.quarter1: 
-            cv.putText(get_image, f"point1: {self.quarter1 - self.start:.2f} sec", (15, 45), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
+            get_image[15:60,5:248,:] = self.first_img
+            cv.putText(get_image, f"{self.quarter1 - self.start:.1f}sec", (100, 45), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
         if self.start and self.quarter2: 
-            cv.putText(get_image, f"point2: {self.quarter2 - self.start:.2f} sec", (15, 90), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
+            get_image[65:110,5:248,:] = self.second_img
+            cv.putText(get_image, f"{self.quarter2 - self.start:.1f}sec", (100, 95), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
         if self.start and self.quarter3: 
-            cv.putText(get_image, f"point1: {self.quarter3 - self.start:.2f} sec", (15, 135), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
-
+            get_image[115:160,5:248,:] = self.third_img
+            cv.putText(get_image, f"{self.quarter3 - self.start:.1f}sec", (100, 145), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
         if self.start and self.quarter1 and self.quarter2 and self.quarter3 and self.finish :
             self.lap_record = self.finish - self.start
-            cv.putText(get_image, f"LAP Record: {self.lap_record:.2f} sec", (15, 180), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
+            get_image[165:210,5:295,:] = self.finish_img
+            cv.putText(get_image, f"{self.lap_record:.1f}sec", (100, 195), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 255, 0), 1, cv.LINE_AA)
             self.get_logger().info(f'LAP Record: {self.lap_record:.2f}')
         cv.imshow('bot_camera',get_image)
 
