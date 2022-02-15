@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'hand_wheel = motion_bot.hand_wheel:main',
-            'sub_cam = pub_cam.sub_cam:main',
+            'sub_cam = motion_bot.sub_cam:main',
         ],
     },
 )
