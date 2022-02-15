@@ -105,6 +105,7 @@ def main(args=None):
     speedo = cv.imread('./speedometer495x271.png')
     speedo = cv.resize(speedo, (248, 136))
     needle = cv.imread('./needle165x166.png')
+    speed_bar = cv.imread('./speed__bar.png')
 
 
     order = 'RAISE YOUR HAND TO START'
@@ -222,7 +223,7 @@ def main(args=None):
         elif order == None :
             image =  alpha_img(image,nono,380,540)
         
-        image = cv.rectangle(image, (5, 425), (248, 480), (0, 255, 0), -1)
+        image[425:480,5:248,:] = speed_bar
 
         if start :
             end = time.time()
