@@ -166,13 +166,13 @@ def main(args=None):
             
 
             if order == 'up' :   
-                if vel_x < 0.4 :            # jetson nano는 4
+                if vel_x < 0.26 :            # jetson nano는 4
                     vel_x += delta_v
                 else : 
                     pass
 
             elif order == 'down' :
-                if vel_x > -0.4 :           # jetson nano는 -4
+                if vel_x > -0.26 :           # jetson nano는 -4
                     vel_x -= delta_v
                 else : 
                     pass
@@ -208,7 +208,7 @@ def main(args=None):
         if vel_x :
             image =  alpha_img(image,speedo,289,5)
 
-            theta = abs(vel_x)*-450         # jetson nano는 *-45
+            theta = abs(vel_x)*-692         # jetson nano는 *-69.2
             rot = cv.getRotationMatrix2D((83,83), theta, 1)
             needle1 = cv.warpAffine(needle,rot,(0,0))
             image =  alpha_img(image,needle1,311,46)
@@ -229,7 +229,7 @@ def main(args=None):
             end = time.time()
             lap_time = end - start
             
-        cv.putText(image, f"{40*vel_x:.1f} km/h", (20, 463), cv.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0), 1, cv.LINE_AA)
+        cv.putText(image, f"{3600*vel_x:.1f} m/h", (20, 463), cv.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0), 1, cv.LINE_AA)
         cv.putText(image, f"{lap_time:.5f} sec", (15, 45), cv.FONT_HERSHEY_DUPLEX, 0.8, (0, 0, 0), 1, cv.LINE_AA)
         cv.imshow('Fantasy Driving', image)
         pub.pub_motor(vel_x,rad)
