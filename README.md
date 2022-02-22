@@ -6,7 +6,7 @@
 ## 시연 모습    
 ![KakaoTalk_20220212_111535165](https://user-images.githubusercontent.com/79293543/153692619-bda131b6-4eed-4d21-8d10-427d254ff046.gif)  
     
-![20220212_154718](https://user-images.githubusercontent.com/79293543/153700611-365d3dec-7e07-40c6-b423-d9367b67aeaf.gif)  
+ 
 
 ![enter_desk](https://user-images.githubusercontent.com/79293543/155056879-83381471-4bb4-4764-b96d-4567a9662027.gif)  
 
