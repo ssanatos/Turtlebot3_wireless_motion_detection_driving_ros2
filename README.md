@@ -68,8 +68,8 @@ ctrl x  ->  y  ->  enter
 하지만, 손 동작을 새롭게 학습시키고 싶다면 다음과 같은 과정을 거친다.  
 ![라파 프로젝트 서현호 개발사양서 (9)](https://user-images.githubusercontent.com/79293543/153701674-c64d8abe-e9e8-42d3-a489-677b40da7f2c.jpg)  
 1. 손 동작 데이터 수집하기.  
-PC에 웹캠을 연결하고 learning.zip을 다운받는다.  
-learning.zip이라는 압축파일을 풀고 gather.py라는 파일을 pc에서 실행한다.  
+PC에 웹캠을 연결하고 hand_data_gather.py와 hand_data_train.ipynb를 다운받는다.  
+hand_data_gather.py라는 파일을 pc에서 실행한다.  
 ctrl alt T 를 통해 터미널 창을 열고, 아래의 코드를 복사 붙여넣기 하여 필요한 라이브러리를 설치한다.  
 ```pip install mediapipe```  
 파이썬 파일 내에서 라벨링 할 태그를 설정하고 해당하는 손 모양을 만든 후,  
@@ -80,7 +80,7 @@ ctrl alt T 를 통해 터미널 창을 열고, 아래의 코드를 복사 붙여
 필요없는 노이즈가 제거되어 대량의 데이터를 학습시키기가 용이하고,   
 아주 짧은 시간의 학습으로 상당한 수준으로 정확도를 높일 수 있기 때문이다.   
 2. 손 동작 학습시키기.  
-learning.py라는 파이썬 파일을 열고,  
+hand_data_train.ipynb라는 파일을 열고,  
 수집한 손 동작 데이터를 불러온다.  
 ![스크린샷, 2022-02-13 19-15-22](https://user-images.githubusercontent.com/79293543/153749294-d66930ae-78ab-4f34-9c3b-acdf942acad4.png)  
 학습은 빠르고 성능이 좋은 XGBOOST를 사용한다.  
