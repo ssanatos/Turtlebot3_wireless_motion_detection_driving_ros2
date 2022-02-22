@@ -63,7 +63,7 @@ with mp_hands.Hands(
       # Flip the image horizontally for a selfie-view display.
     text = "derection(straight,right,left,back), velocity, time, degree"
     cv2.putText(image, text, (50, 100), cv2.FONT_HERSHEY_DUPLEX, 1.2, (0, 0, 255), 1, cv2.LINE_AA)
-    cv2.imshow('MediaPipe Hands', cv2.flip(image, 1))
+    cv2.imshow('MediaPipe Hands', image)
     if cv2.waitKey(5) & 0xFF == 27:
       now = time.strftime("%H%M")
       hand_data.to_csv('./hand'+ order + now +'.csv',mode='a', index=False)
