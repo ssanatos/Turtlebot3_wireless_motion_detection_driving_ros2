@@ -9,9 +9,9 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
 
-order = "incr"
+# order = "incr"
 # order = "decr"
-# order = "back"
+order = "back"
 # order = "stab"
 
 # For webcam input:
@@ -61,7 +61,7 @@ with mp_hands.Hands(
       hand_data.loc[len(hand_data)] = hand_list
 
       # Flip the image horizontally for a selfie-view display.
-    text = "derection(straight,right,left,back), velocity, time, degree"
+    text = "up down back sta"
     cv2.putText(image, text, (50, 100), cv2.FONT_HERSHEY_DUPLEX, 1.2, (0, 0, 255), 1, cv2.LINE_AA)
     cv2.imshow('MediaPipe Hands', image)
     if cv2.waitKey(5) & 0xFF == 27:
